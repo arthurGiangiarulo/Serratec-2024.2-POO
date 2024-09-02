@@ -9,10 +9,6 @@ public class AppApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(AppApplication.class, args);
 
-		int numero1;
-		numero1 = 0;
-		numero1 = 5;
-
 		ClientePessoaFisica cliente = new ClientePessoaFisica();
 		cliente.nome = "Marina Mayumi";
 		cliente.cpf = "12345678900";
@@ -23,6 +19,8 @@ public class AppApplication {
 		cliente.telefone = "24999998888";	
 
 		cliente.imprimeFicha();
+
+		// ClientePessoaJuridica, Gerente, Atendente, Agencia, Conta
 		
 	}
 }
