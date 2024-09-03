@@ -1,6 +1,7 @@
 package com.poo.app;
 
 public class Endereco {
+    int id;
     String logradouro;
     String numero;
     String complemento;

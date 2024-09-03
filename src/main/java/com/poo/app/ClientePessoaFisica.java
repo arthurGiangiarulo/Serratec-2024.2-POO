@@ -1,7 +1,7 @@
 package com.poo.app;
 
 public class ClientePessoaFisica {
-
+    int id;
     String nome;
     String cpf;
     String dataNascimento; 
