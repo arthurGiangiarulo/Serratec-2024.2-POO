@@ -9,7 +9,7 @@ public class AppApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(AppApplication.class, args);
 
-		ClientePessoaFisica cliente = new ClientePessoaFisica();
+		Cliente cliente = new Cliente();
 		cliente.nome = "Marina Mayumi";
 		cliente.cpf = "12345678900";
 		cliente.dataNascimento = "01/01/2000";
@@ -22,22 +22,22 @@ public class AppApplication {
 		Endereco end = new Endereco();
 
 		// Alimentando o objeto end antes de atribuir.
-		// end.cep = "20.202-202";
-		// end.bairro = "Cascatinha";
-		// end.cidade = "Petrópolis";
+		end.cep = "20.202-202";
+		end.bairro = "Cascatinha";
+		end.cidade = "Petrópolis";
 		// ...
 
 		// Atribuição do end para o atributo endereco da classe
-		// ClientePessoaFisica
+		// Cliente
 		cliente.endereco = end;
 		
-		cliente.endereco.cep = "20.202-202";
-		cliente.endereco.bairro = "Cascatinha";
-		cliente.endereco.cidade = "Petrópolis";
+		// cliente.endereco.cep = "20.202-202";
+		// cliente.endereco.bairro = "Cascatinha";
+		// cliente.endereco.cidade = "Petrópolis";
 
 		cliente.imprimeFicha();
 
-		// ClientePessoaJuridica, Gerente, Atendente, Agencia, Conta
+		// Gerente, Atendente, Agencia, Conta
 	}
 }
 

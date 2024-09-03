@@ -1,6 +1,6 @@
 package com.poo.app;
 
-public class ClientePessoaFisica {
+public class Cliente {
     int id;
     String nome;
     String cpf;
@@ -11,7 +11,7 @@ public class ClientePessoaFisica {
     String email;
     String telefone;
 
-    // Método
+    // Métodos
     void imprimeFicha(){
         System.out.println(this.nome);
 		System.out.println(this.cpf);
@@ -22,7 +22,6 @@ public class ClientePessoaFisica {
 		System.out.println(this.telefone);
         
 		this.endereco.imprimeEndereco();
-        
     }
 
 }
