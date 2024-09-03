@@ -18,10 +18,26 @@ public class AppApplication {
 		cliente.email = "marina@gmail.com";	
 		cliente.telefone = "24999998888";	
 
+		// Instanciando um novo objeto end do tipo endereco
+		Endereco end = new Endereco();
+
+		// Alimentando o objeto end antes de atribuir.
+		// end.cep = "20.202-202";
+		// end.bairro = "Cascatinha";
+		// end.cidade = "Petrópolis";
+		// ...
+
+		// Atribuição do end para o atributo endereco da classe
+		// ClientePessoaFisica
+		cliente.endereco = end;
+		
+		cliente.endereco.cep = "20.202-202";
+		cliente.endereco.bairro = "Cascatinha";
+		cliente.endereco.cidade = "Petrópolis";
+
 		cliente.imprimeFicha();
 
 		// ClientePessoaJuridica, Gerente, Atendente, Agencia, Conta
-		
 	}
 }
 

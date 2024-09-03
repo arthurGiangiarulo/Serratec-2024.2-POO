@@ -7,7 +7,7 @@ public class ClientePessoaFisica {
     String dataNascimento; 
     String login;
     String senha;
-    String endereco;
+    Endereco endereco;
     String email;
     String telefone;
 
@@ -20,6 +20,9 @@ public class ClientePessoaFisica {
 		System.out.println(this.senha);
 		System.out.println(this.email);
 		System.out.println(this.telefone);
+        
+		this.endereco.imprimeEndereco();
+        
     }
 
 }
