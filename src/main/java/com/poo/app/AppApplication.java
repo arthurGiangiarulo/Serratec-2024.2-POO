@@ -9,14 +9,15 @@ public class AppApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(AppApplication.class, args);
 
-		Cliente cliente = new Cliente();
-		cliente.nome = "Marina Mayumi";
-		cliente.cpf = "12345678900";
-		cliente.dataNascimento = "01/01/2000";
-		cliente.login = "marina@gmail.com";	
-		cliente.senha = "mayumi";		
-		cliente.email = "marina@gmail.com";	
-		cliente.telefone = "24999998888";	
+		// Criando um novo cliente
+		Cliente cliente1 = new Cliente();
+		cliente1.nome = "Marina Mayumi";
+		cliente1.cpf = "12345678900";
+		cliente1.dataNascimento = "01/01/2000";
+		cliente1.login = "marina@gmail.com";	
+		cliente1.senha = "mayumi";		
+		cliente1.email = "marina@gmail.com";	
+		cliente1.telefone = "24999998888";	
 
 		// Instanciando um novo objeto end do tipo endereco
 		Endereco end = new Endereco();
@@ -28,16 +29,16 @@ public class AppApplication {
 		// ...
 
 		// Atribuição do end para o atributo endereco da classe
-		// Cliente
-		cliente.endereco = end;
-		
-		// cliente.endereco.cep = "20.202-202";
-		// cliente.endereco.bairro = "Cascatinha";
-		// cliente.endereco.cidade = "Petrópolis";
+		// cliente1
+		cliente1.endereco = end;
 
-		cliente.imprimeFicha();
+		// Instanciar uma conta
+		Conta conta1 = new Conta(cliente1, "corrente");
+		Conta conta2 = new Conta();
 
-		// Gerente, Atendente, Agencia, Conta
+		conta1.exibeDadosDaConta();
+		conta2.exibeDadosDaConta();
+	
 	}
 }
 
