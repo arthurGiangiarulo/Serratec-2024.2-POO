@@ -1,27 +1,18 @@
 package com.poo.app;
 
-public class Cliente {
-    int id;
-    String nome;
-    String cpf;
-    String dataNascimento; 
+public class Cliente extends Pessoa{
+
     String login;
     String senha;
-    Endereco endereco;
-    String email;
-    String telefone;
 
-    // Métodos
-    void imprimeFicha(){
-        System.out.println(this.nome);
-		System.out.println(this.cpf);
-		System.out.println(this.dataNascimento);
-		System.out.println(this.login);
-		System.out.println(this.senha);
-		System.out.println(this.email);
-		System.out.println(this.telefone);
-        
-		this.endereco.imprimeEndereco();
+    @Override
+    public void imprimeFicha() {
+        System.out.println("FICHA DO CLIENTE");
+        System.out.println("Nome: " + getNome());
+        System.out.println("CPF: " + getCpf());
+        System.out.println("Data de Nascimento: " + getDataNascimento());
+        System.out.println("Endereço: " + getEndereco().getLogradouro());
+        System.out.println("E-mail: " + getEmail());
+        System.out.println("Telefone: " + getTelefone());
     }
-
 }

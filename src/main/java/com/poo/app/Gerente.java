@@ -1,24 +1,21 @@
 package com.poo.app;
 
-public class Gerente {
+public class Gerente extends Funcionario{
 
-    // Dados da pessoa
-    int id;
-    String nome;
-    String cpf;
-    String dataNascimento; 
-    String login;
-    String senha;
-    Endereco endereco;
-    String email;
-    String telefone;    
-    
-    // Composição?
-    // ClientePessoaFisica gerente;
+    @Override
+    public void imprimeFicha() {
+        System.out.println("FICHA DO GERENTE");
+        System.out.println("Nome: " + getNome());
+        System.out.println("CPF: " + getCpf());
+        System.out.println("Data de Nascimento: " + getDataNascimento());
+        System.out.println("Endereço: " + getEndereco().getLogradouro());
+        System.out.println("E-mail: " + getEmail());
+        System.out.println("Telefone: " + getTelefone());
 
-    //Dados do funcionário
-    String matricula;
-    String dataPromocao;
-    double salario;
-    Agencia agenciaAlocado;
+        // Dados do Funcionário
+        System.out.println("Matrícula: " + getMatricula());
+        System.out.println("Data de Admissão: " + getDataAdminssao());
+        System.out.println("Data de Promoção: " + getDataPromocao());
+        System.out.println("Salário: " + getSalario());
+    }
 }

@@ -2,7 +2,7 @@ package com.poo.app;
 
 // Resolver o problema das especificidades de cada tipo de conta com herança
 public class Conta {
-    public static int contadorId = 1; //2
+    public static int contadorId = 1;
     public static int contadorNumero = 1000;
 
     // Atributos
@@ -117,15 +117,9 @@ public class Conta {
     }
     
     // Outros Métodos
-    public void exibeSaldo(){
-        System.out.println("Conta: " + this.numero);
-		System.out.println("Titular: " + this.titular.nome);
-		System.out.println("Saldo : R$" + this.saldo);
-    }
-
     public void exibeDadosDaConta(){
         System.out.println("Conta: " + this.numero);
-        System.out.println("Titular: " + this.titular.nome);
+        System.out.println("Titular: " + this.titular.getNome());
         System.out.println("Saldo : R$" + this.saldo);
         System.out.println("Data de Abertura: " + this.dataAbertura);
         System.out.println("Tipo: " + this.tipo);
