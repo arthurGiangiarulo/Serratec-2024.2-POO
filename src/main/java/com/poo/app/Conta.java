@@ -2,6 +2,8 @@ package com.poo.app;
 
 // Resolver o problema das especificidades de cada tipo de conta com herança
 public class Conta {
+    public static int contadorId = 1; //2
+    public static int contadorNumero = 1000;
 
     // Atributos
     private int id; // Geração automática
@@ -16,17 +18,25 @@ public class Conta {
 
     // Construtores
     public Conta(Cliente cliente, String tipo){
-        this.id = 1; // O próximo deve ser 2
+        this.id = contadorId;
+        contadorId++;
         this.saldo = 0;
-        this.dataAbertura = "03/09/2024";
-        this.numero = "1234-0"; // A próxima deve ser 1235-0
+        // this.dataAbertura; // Rode um comando que busque a data daquele momento
+        this.numero = (contadorNumero + "-0"); // A próxima deve ser 1001-0
+        contadorNumero++;
         this.classificacao = 'A';
         this.status = "Ativa";
+        // As informações que são passadas no momento em que o objeto é instanciado
         this.titular = cliente;
         this.tipo = tipo;
     }
+
     public Conta(){
-        
+        this.id = contadorId;
+        contadorId++;
+
+        this.numero = (contadorNumero + "-0");
+        contadorNumero++;
     }
 
     // Getters e Setters
@@ -75,6 +85,8 @@ public class Conta {
     }
 
     public void setTipo(String tipo) {
+        // Se o tipo for diferente de salario, poupança ou corrente não pode.
+        // if(){}
         this.tipo = tipo;
     }
 
