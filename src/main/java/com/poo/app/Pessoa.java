@@ -1,6 +1,6 @@
 package com.poo.app;
 
-public class Pessoa {
+public abstract class Pessoa {
     private int id;
     private String nome;
     private String cpf;
@@ -53,5 +53,5 @@ public class Pessoa {
         this.telefone = telefone;
     }
 
-    // public abstract void imprimeFicha();
+    public abstract void imprimeFicha();
 }
