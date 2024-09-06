@@ -1,7 +1,7 @@
 package com.poo.app;
 
 // Resolver o problema das especificidades de cada tipo de conta com herança
-public class Conta {
+public abstract class Conta {
     public static int contadorId = 1;
     public static int contadorNumero = 1000;
 
@@ -11,24 +11,20 @@ public class Conta {
     private Agencia agencia; // Associada a agencia do Gerente
     private Cliente titular; // Gerene informa o titular
     private String dataAbertura; // Data de abertura do momento
-    private String tipo; //poupança, salário, corrente // Gerente informa
     private double saldo; // Saldo = 0
-    private char classificacao; // (A), B, C ou D
     private String status; // Bloqueada, (Ativa), Em Análise, Suspensa(30 dias...), Inativa
 
     // Construtores
-    public Conta(Cliente cliente, String tipo){
+    public Conta(Cliente cliente){
         this.id = contadorId;
         contadorId++;
         this.saldo = 0;
         // this.dataAbertura; // Rode um comando que busque a data daquele momento
         this.numero = (contadorNumero + "-0"); // A próxima deve ser 1001-0
         contadorNumero++;
-        this.classificacao = 'A';
         this.status = "Ativa";
         // As informações que são passadas no momento em que o objeto é instanciado
         this.titular = cliente;
-        this.tipo = tipo;
     }
 
     public Conta(){
@@ -80,16 +76,6 @@ public class Conta {
         this.dataAbertura = dataAbertura;
     }
 
-    public String getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(String tipo) {
-        // Se o tipo for diferente de salario, poupança ou corrente não pode.
-        // if(){}
-        this.tipo = tipo;
-    }
-
     public double getSaldo(){
         return this.saldo;
     }
@@ -98,14 +84,6 @@ public class Conta {
         // Determinar como eu posso alterar o atributo saldo
         // Dupla autenticacao (Gerente geral e mais um gerente)
         this.saldo = saldo;
-    }
-
-    public char getClassificacao() {
-        return classificacao;
-    }
-
-    public void setClassificacao(char classificacao) {
-        this.classificacao = classificacao;
     }
 
     public String getStatus() {
@@ -122,8 +100,15 @@ public class Conta {
         System.out.println("Titular: " + this.titular.getNome());
         System.out.println("Saldo : R$" + this.saldo);
         System.out.println("Data de Abertura: " + this.dataAbertura);
-        System.out.println("Tipo: " + this.tipo);
-        System.out.println("Classificação: " + this.classificacao);
         System.out.println("Status: " + this.status);
+    }
+
+    public void sacar(double valor){
+        if(this.saldo >= valor){
+            this.saldo -= valor;
+            System.out.println("Saque de R$ " + valor + " realizado com sucesso!");
+        } else {
+            System.out.println("Saldo insuficiente para realizar o saque!");
+        }
     }
 }

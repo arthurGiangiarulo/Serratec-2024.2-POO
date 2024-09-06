@@ -1,9 +1,6 @@
 package com.poo.app;
 
-public class Cliente extends Pessoa{
-
-    String login;
-    String senha;
+public class Cliente extends Pessoa implements Login{
 
     @Override
     public void imprimeFicha() {
@@ -14,5 +11,14 @@ public class Cliente extends Pessoa{
         System.out.println("Endereço: " + getEndereco().getLogradouro());
         System.out.println("E-mail: " + getEmail());
         System.out.println("Telefone: " + getTelefone());
+    }
+
+    @Override
+    public boolean acessoPermitido(String login, String senha) {
+        // Escopo de funcionalidades que o cliente tem acesso
+        if(login.equals(getLogin()) && senha.equals(getSenha())){
+            return true;
+        }
+        return false;
     }
 }

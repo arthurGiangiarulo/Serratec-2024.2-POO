@@ -1,6 +1,6 @@
 package com.poo.app;
 
-public class Gerente extends Funcionario{
+public class Gerente extends Funcionario implements Login {
 
     @Override
     public void imprimeFicha() {
@@ -18,4 +18,14 @@ public class Gerente extends Funcionario{
         System.out.println("Data de Promoção: " + getDataPromocao());
         System.out.println("Salário: " + getSalario());
     }
+
+    @Override
+    public boolean acessoPermitido(String login, String senha) {
+        // Escopo de funcionalidades que o gerente tem acesso
+        if(login.equals(getLogin()) && senha.equals(getSenha())){
+            return true;
+        }
+        return false;
+    }
+
 }
