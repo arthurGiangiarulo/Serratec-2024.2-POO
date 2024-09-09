@@ -7,7 +7,7 @@ public class Endereco {
     private String complemento;
     private String bairro;
     private String cidade;
-    private String estado;
+    private UnidadeFederal estado;
     private String cep;
 
     // Getters e Setters
@@ -59,11 +59,11 @@ public class Endereco {
         this.cidade = cidade;
     }
 
-    public String getEstado() {
+    public UnidadeFederal getEstado() {
         return estado;
     }
 
-    public void setEstado(String estado) {
+    public void setEstado(UnidadeFederal estado) {
         this.estado = estado;
     }
 

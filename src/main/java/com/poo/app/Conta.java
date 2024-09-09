@@ -1,4 +1,5 @@
 package com.poo.app;
+import java.time.LocalDate;
 
 // Resolver o problema das especificidades de cada tipo de conta com herança
 public abstract class Conta {
@@ -8,9 +9,9 @@ public abstract class Conta {
     // Atributos
     private int id; // Geração automática
     private String numero; // Geração automática
-    private Agencia agencia; // Associada a agencia do Gerente
+    private Agencia agencia; // Associada a agencia do Gerente // 1 cc 2 cp 3 cs
     private Cliente titular; // Gerene informa o titular
-    private String dataAbertura; // Data de abertura do momento
+    private LocalDate dataAbertura; // Data de abertura do momento
     private double saldo; // Saldo = 0
     private String status; // Bloqueada, (Ativa), Em Análise, Suspensa(30 dias...), Inativa
 
@@ -19,7 +20,7 @@ public abstract class Conta {
         this.id = contadorId;
         contadorId++;
         this.saldo = 0;
-        // this.dataAbertura; // Rode um comando que busque a data daquele momento
+        this.dataAbertura = LocalDate.now();
         this.numero = (contadorNumero + "-0"); // A próxima deve ser 1001-0
         contadorNumero++;
         this.status = "Ativa";
@@ -68,11 +69,11 @@ public abstract class Conta {
         this.titular = titular;
     }
 
-    public String getDataAbertura() {
+    public LocalDate getDataAbertura() {
         return dataAbertura;
     }
 
-    public void setDataAbertura(String dataAbertura) {
+    public void setDataAbertura(LocalDate dataAbertura) {
         this.dataAbertura = dataAbertura;
     }
 
