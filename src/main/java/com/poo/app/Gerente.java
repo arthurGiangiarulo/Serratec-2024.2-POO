@@ -2,6 +2,10 @@ package com.poo.app;
 
 import java.util.Scanner;
 
+import com.poo.app.exception.DigitoInvalidoException;
+
+import java.util.InputMismatchException;
+
 public class Gerente extends Funcionario implements Login {
 
     @Override
@@ -13,10 +17,9 @@ public class Gerente extends Funcionario implements Login {
         return false;
     }
 
-    public static void menuGerente(){
-        int opcao;
+    public static void menuGerente () {
+        int opcao = 8;
 		do {
-            
 			System.out.println("\n- MENU -");
 			System.out.println("O que deseja fazer?");
 			System.out.println("1- Cadastrar novo cliente");
@@ -26,31 +29,37 @@ public class Gerente extends Funcionario implements Login {
 			System.out.println("0- Sair\n");
 			System.out.print("Digite uma opção: ");
 			Scanner sc = new Scanner(System.in);
-			opcao = sc.nextInt();
-            System.out.println("\n");
-
-			switch(opcao){
-				case 1:
-					Cliente.cadastraNovoCliente();
-					break;
-				case 2:
-					// Atualizar cliente
-					System.out.println("Atualizando cliente...");
-					break;
-					case 3:
-					// Deletar cliente
-					System.out.println("Deletando cliente...");
-					break;
-				case 4:
-					Cliente.imprimeListaDeClientes();
-					break;
-				case 0:
-					System.out.println("Saindo...");
-					break;
-				default:
-					System.out.println("Opção inválida");
-					break;
-			}
+			
+			// try {
+				opcao = sc.nextInt();
+				System.out.println("\n");
+	
+				switch(opcao){
+					case 1:
+						Cliente.cadastraNovoCliente();
+						break;
+					case 2:
+						// Atualizar cliente
+						System.out.println("Atualizando cliente...");
+						break;
+						case 3:
+						// Deletar cliente
+						System.out.println("Deletando cliente...");
+						break;
+					case 4:
+						Cliente.imprimeListaDeClientes();
+						break;
+					case 0:
+						System.out.println("Saindo...");
+						break;
+					default:
+						System.out.println("Opção inválida");
+						break;
+				}
+			// } catch (DigitoInvalidoException e) {
+			// 	System.out.println("Opção inválida! Digite um número inteiro");
+			// 	e.imprimeErro(e);
+			// }
 		} while(opcao != 0);
     }
 }
