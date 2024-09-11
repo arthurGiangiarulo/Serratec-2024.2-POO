@@ -1,23 +1,8 @@
 package com.poo.app;
 
+import java.util.Scanner;
+
 public class Gerente extends Funcionario implements Login {
-
-    @Override
-    public void imprimeFicha() {
-        System.out.println("FICHA DO GERENTE");
-        System.out.println("Nome: " + getNome());
-        System.out.println("CPF: " + getCpf());
-        System.out.println("Data de Nascimento: " + getDataNascimento());
-        System.out.println("Endereço: " + getEndereco().getLogradouro());
-        System.out.println("E-mail: " + getEmail());
-        System.out.println("Telefone: " + getTelefone());
-
-        // Dados do Funcionário
-        System.out.println("Matrícula: " + getMatricula());
-        System.out.println("Data de Admissão: " + getDataAdminssao());
-        System.out.println("Data de Promoção: " + getDataPromocao());
-        System.out.println("Salário: " + getSalario());
-    }
 
     @Override
     public boolean acessoPermitido(String login, String senha) {
@@ -28,4 +13,44 @@ public class Gerente extends Funcionario implements Login {
         return false;
     }
 
+    public static void menuGerente(){
+        int opcao;
+		do {
+            
+			System.out.println("\n- MENU -");
+			System.out.println("O que deseja fazer?");
+			System.out.println("1- Cadastrar novo cliente");
+			System.out.println("2- Atualizar cliente");
+			System.out.println("3- Deletar cliente");
+			System.out.println("4- Listar clientes");
+			System.out.println("0- Sair\n");
+			System.out.print("Digite uma opção: ");
+			Scanner sc = new Scanner(System.in);
+			opcao = sc.nextInt();
+            System.out.println("\n");
+
+			switch(opcao){
+				case 1:
+					Cliente.cadastraNovoCliente();
+					break;
+				case 2:
+					// Atualizar cliente
+					System.out.println("Atualizando cliente...");
+					break;
+					case 3:
+					// Deletar cliente
+					System.out.println("Deletando cliente...");
+					break;
+				case 4:
+					Cliente.imprimeListaDeClientes();
+					break;
+				case 0:
+					System.out.println("Saindo...");
+					break;
+				default:
+					System.out.println("Opção inválida");
+					break;
+			}
+		} while(opcao != 0);
+    }
 }
