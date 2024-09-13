@@ -19,6 +19,11 @@ public class AppApplication {
 		g.setSenha("1234");
 		Pessoa.listaDeUsuarios.add(g);
 
+		Cliente c = new Cliente();
+		c.setNome("João Casadinho");
+		c.setLogin("joao.cliente@banco.com");
+		c.setSenha("3456");
+		Pessoa.listaDeUsuarios.add(c);
 
 		// Menu incial
 		// Pergunta login e senha
@@ -32,6 +37,7 @@ public class AppApplication {
 			String senhaDigitada = sc.nextLine();
 	
 			if( autorizaCredenciais(loginDigitado, senhaDigitada) ){
+				tentativas=3;
 				usuarioLogado.login();
 			} else if ( tentativas > 1){
 				System.out.println("Login ou senha incorretos!");

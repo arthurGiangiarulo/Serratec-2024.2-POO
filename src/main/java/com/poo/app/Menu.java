@@ -53,6 +53,14 @@ public class Menu {
     }
     // Menu Cliente
     public static void cliente(){
+        System.out.println("Olá, " + AppApplication.usuarioLogado.getNome() + ".\n\n");
         
+        System.out.println("\n- MENU -");
+            System.out.println("O que deseja fazer?");
+            System.out.println("1- Acessar saldo");
+            System.out.println("2- Visualiza extrato");
+            System.out.println("3- Pix");
+            System.out.println("0- Sair\n");
+            System.out.print("Digite uma opção: ");
     }
 }
