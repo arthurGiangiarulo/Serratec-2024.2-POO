@@ -2,7 +2,6 @@ package com.poo.app;
 
 public class Atendente extends Funcionario {
 
-    @Override
     public void imprimeFicha() {
         System.out.println("FICHA DO ATENDENTE");
         System.out.println("Nome: " + getNome());
@@ -17,6 +16,10 @@ public class Atendente extends Funcionario {
         System.out.println("Data de Admissão: " + getDataAdminssao());
         System.out.println("Data de Promoção: " + getDataPromocao());
         System.out.println("Salário: " + getSalario());
+    }
+
+    public void login(){
+        
     }
 
 }

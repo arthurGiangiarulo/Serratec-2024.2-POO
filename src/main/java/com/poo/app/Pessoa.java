@@ -1,9 +1,15 @@
 package com.poo.app;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import lombok.Data;
 
 @Data
-public abstract class Pessoa {
+public abstract class Pessoa implements Login{
+
+    public static ArrayList<Pessoa> listaDeUsuarios = new ArrayList<>();
+
     private int id;
     private String nome;
     private String cpf;
@@ -14,4 +20,5 @@ public abstract class Pessoa {
 
     private String login;
     private String senha;
+
 }

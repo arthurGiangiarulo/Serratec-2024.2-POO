@@ -5,12 +5,11 @@ import java.util.Scanner;
 
 import java.util.ArrayList;
 
-public class Cliente extends Pessoa implements Login{
+public class Cliente extends Pessoa {
 
     //Lista de clientes
     public static List<Cliente> listaDeClientes = new ArrayList<Cliente>();
 
-    @Override
     public boolean acessoPermitido(String login, String senha) {
         // Escopo de funcionalidades que o cliente tem acesso
         if(login.equals(getLogin()) && senha.equals(getSenha())){
@@ -42,5 +41,8 @@ public class Cliente extends Pessoa implements Login{
 		cliente.setNome(nome);
 		Cliente.listaDeClientes.add(cliente);
         System.out.println("\n");
+    }
+    public void login(){
+        Menu.cliente();
     }
 }
